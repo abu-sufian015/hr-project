@@ -1,5 +1,5 @@
 # hr-project
-### This project used based on customer and requirement ,used tools like powe-BI.
+### This project used based on customer requirement ,used tools like powe-BI.
 
 #### Project requirements
 
