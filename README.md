@@ -1,5 +1,7 @@
 # hr-project
 ### This project used based on customer requirement ,used tools like power-BI.
+## 🔹 Dashboard Snapshot  
+![Dashboard Screenshot](HR_dashboard.png)
 
 #### Project requirements
 
