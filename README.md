@@ -4,6 +4,12 @@
 The objective of this project is to analyze workforce data to uncover key HR insights, including employee demographics, salary distribution, staff growth trends, and leave balances. Using **Power BI, Excel, and DAX calculations**, the project transforms raw HR data into an interactive dashboard that supports data-driven decision-making in HR management.
 
 ---
+![Dashboard Screenshot](s1.png)
+
+---
+![Dashboard Screenshot](dm1.png)
+
+---
 
 ## 📌 Project Requirements
 The analysis addresses the following HR questions:
@@ -27,6 +33,16 @@ The analysis addresses the following HR questions:
 - 📌 **Qualification vs. Salary** – Relationship between education and pay.
 - 📌 **Leave & Attendance Analysis** – Absenteeism and leave balance.
 - 📌 **HR Dashboard** – A unified view of all critical KPIs.
+
+---
+![Dashboard Screenshot](d.png)
+
+---
+![Dashboard Screenshot](d4.png)
+
+---
+![Dashboard Screenshot](d5.png)
+
 
 ---
 
