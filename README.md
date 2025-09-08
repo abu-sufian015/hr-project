@@ -1,53 +1,90 @@
-# hr-project
-### This project used based on customer requirement ,used tools like power-BI.
-## 🔹 Dashboard Snapshot  
-![Dashboard Screenshot](HR_dashboard.png)
+# 📊 HR Analytics Dashboard
 
-#### Project requirements
+## 🎯 Project Objective
+The objective of this project is to analyze workforce data to uncover key HR insights, including employee demographics, salary distribution, staff growth trends, and leave balances. Using **Power BI, Excel, and DAX calculations**, the project transforms raw HR data into an interactive dashboard that supports data-driven decision-making in HR management.
 
- - How many people are in each job?
- - Gender break-down of the staff
- - Age spread of the staff
- - Which jobs pay more?
- - Top earners in each job
- - Qualification vs. Salary
- - Staff growth trend over time
- - Employee filter by starting letter
- - Leave balance analysis
- - Quick HR Dashboard
+---
 
+## 📌 Project Requirements
+The analysis addresses the following HR questions:
+- How many people are in each job role?
+- What is the gender breakdown of the staff?
+- What is the age distribution across employees?
+- Which jobs pay more, and who are the top earners in each role?
+- How do qualifications impact salary levels?
+- What is the staff growth trend over time?
+- Can employees be filtered by the first letter of their name?
+- What does the leave balance analysis reveal?
+- How can HR managers track KPIs quickly in a **Quick HR Dashboard**?
 
-##### Some important formulas and calculations:
- - countrows= count each rows per table
-   
+---
 
-###### Explanation of Formula Each Part: <br>
-VAR currentdate = LASTDATE(employes[Date of Join]) <br>
+## ⚙️ Key Features & Dashboard Insights
+- 📌 **Job Role Analysis** – Distribution of employees across departments/roles.
+- 📌 **Gender & Age Breakdown** – Diversity and workforce demographics.
+- 📌 **Salary Insights** – Average salaries, top earners, and role-based salary comparison.
+- 📌 **Employee Growth** – Cumulative staff count over time.
+- 📌 **Qualification vs. Salary** – Relationship between education and pay.
+- 📌 **Leave & Attendance Analysis** – Absenteeism and leave balance.
+- 📌 **HR Dashboard** – A unified view of all critical KPIs.
 
-This variable currentdate stores the latest (most recent) date from the employes[Date of Join] column.<br>
+---
 
-LASTDATE() returns the last date available in the current filter context.<br>
+## 🛠️ Tools & Technologies
+- **Power BI** – Dashboard design & DAX calculations
+- **Excel** – Data cleaning & PivotTables
+- **DAX** – Custom HR measures & KPIs
 
-RETURN CALCULATE([maincount], ALL(employes[Date of Join]), employes[Date of Join] <= currentdate)<br>
+---
 
-The CALCULATE function modifies the calculation of [maincount] while applying certain conditions:<br>
+## 📚 What I Learned from This Project
+Through this project, I strengthened my:
+- ✅ Ability to design **HR-focused dashboards** that answer real business questions.
+- ✅ Skills in writing **DAX measures** for KPIs like cumulative employee count, absenteeism rate, and salary analysis.
+- ✅ Knowledge of **data modeling and relationships** in Power BI.
+- ✅ Use of **Excel PivotTables and formulas** for validation and quick checks.
+- ✅ Understanding of how **analytics supports HR decision-making** (e.g., staff growth, salary fairness, diversity tracking).
 
-ALL(employes[Date of Join]): Removes any existing filters from the Date of Join column, ensuring that the entire table is considered.<br>
+---
 
-employes[Date of Join] <= currentdate: Applies a filter to include only employees who joined on or before the currentdate.<br>
+## 🧮 Key DAX Measures
 
-What This Measure Does
-It calculates the cumulative total of [maincount] up to the most recent Date of Join.<br>
+### Common HR KPIs
+``` DAX
+-- Total Employees
+Total Employees = COUNTROWS(Employees)
 
-Essentially, this measure gives the running total of employees who have joined up to the latest available date.<br>
+-- Active Employees
+Active Employees = CALCULATE(
+    COUNTROWS(Employees),
+    Employees[Status] = "Active"
+)
 
+-- Average Salary
+Average Salary = AVERAGE(Salary[Salary Amount])
 
+-- Absenteeism Rate
+Absenteeism Rate = DIVIDE(
+    COUNT(Attendance[Absent]),
+    COUNT(Attendance[Date])
+)
 
-2️⃣ Measures & Calculations (DAX) <br>
-Check DAX measures in Modeling → Manage Measures <br>
-🔹 Common HR KPIs in Power BI: <br>
-✅ Total Employees → COUNTROWS(Employees)<br>
-✅ Active Employees → CALCULATE(COUNTROWS(Employees), Employees[Status] = "Active")<br>
-✅ Cumulative Employee Count → (Your DAX formula from before)<br>
-✅ Average Salary → AVERAGE(Salary[Salary Amount])<br>
-✅ Absenteeism Rate → DIVIDE(COUNT(Attendance[Absent]), COUNT(Attendance[Date]))<br>
+---
+
+Cumulative Employee Count =
+VAR currentdate = LASTDATE(Employees[Date of Join])
+RETURN
+    CALCULATE(
+        [MainCount],
+        ALL(Employees[Date of Join]),
+        Employees[Date of Join] <= currentdate
+    )
+
+#####📌 Explanation:
+
+- VAR currentdate = LASTDATE(Employees[Date of Join]) → Captures the most recent hire date in the current filter context.
+
+- ALL(Employees[Date of Join]) → Removes filters to consider all dates.
+
+- Employees[Date of Join] <= currentdate → Ensures only employees who joined on or before the current date are included.
+
