@@ -1,4 +1,5 @@
 # 📊 HR Analytics Dashboard
+An HR analytics dashboard that provides a clear overview of workforce data. It uses data visualization to display key metrics like employee demographics, salary trends, and staff growth, helping HR professionals make informed decisions.
 
 ## 🎯 Project Objective
 The objective of this project is to analyze workforce data to uncover key HR insights, including employee demographics, salary distribution, staff growth trends, and leave balances. Using **Power BI, Excel, and DAX calculations**, the project transforms raw HR data into an interactive dashboard that supports data-driven decision-making in HR management.
